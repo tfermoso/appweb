@@ -92,6 +92,8 @@ button:hover {
   font-size: 0.8em;
   color: rgb(255, 0, 0);
 }
+
+
 @keyframes shake {
   0% { transform: translateX(0); }
   20% { transform: translateX(-5px); }
@@ -106,6 +108,7 @@ button:hover {
   border-color: red !important;
   box-shadow: 0 0 10px red;
 }
+
 
 
 /* 📱 Responsivo para móviles */

@@ -11,28 +11,40 @@ session_start();
 
 if (isset($_SESSION["usuario"])) {
     $usuario = $_SESSION["usuario"];
-    $contador=$_SESSION["contador"][$usuario];
+    $contador = $_SESSION["contador"][$usuario];
+    $contadores = $_SESSION["contador"];
 } else {
     header("Location: index.php");
     exit();
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <header>
-        <h2>Usuario: <?= $usuario ?></h2>
-        <a href="logout.php">Cerrar sesión</a>
-    </header>
+<?php include_once './includes/cabecera.php'; ?>
+<seccion class="main">
     <h1>Dashboard</h1>
     <p>Has accedido <?= $contador ?> veces.</p>
+    <hr>
+    <table>
+        <thead>
+            <th>Usuario</th>
+            <th>Accesos</th>
+            <th>Editar</th>
+        </thead>
+        <tbody>
+            <?php foreach ($contadores as $user => $count): ?>
+                <tr>
+                    <td><?= htmlspecialchars($user) ?></td>
+                    <td><?= $count ?></td>
+                    <td>
+                        <a href="borrar_usuario.php?usuario=<?= urlencode($user) ?>">🗑️</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <a href="nuevo_usuario.php">Nuevo Usuario</a>
+</seccion>
+
+<?php include_once './includes/footer.php'; ?>
 </body>
 
 </html>

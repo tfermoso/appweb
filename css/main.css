@@ -1,0 +1,91 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+header img {
+    height: 60px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 20px;
+    border-bottom: 4px solid var(--verde-neon);
+    box-shadow: 0 0 10px var(--verde-neon);
+}
+
+.user-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #222;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+}
+
+.menu a {
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background: #444;
+}
+
+/* ➤ PC: mostrar con hover */
+@media (hover: hover) {
+    .user-container:hover .menu {
+        display: block;
+    }
+}
+
+/* ➤ Clase que activa el menú en móviles */
+.menu.show {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+/* Contenido general que hará scroll */
+.main {
+    display: block !important;
+    width: 80%;
+    margin: 0 auto;
+
+
+}
+
+/* Footer fijo abajo */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 15px 10px;
+}
