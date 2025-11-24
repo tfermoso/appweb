@@ -12,7 +12,7 @@ session_start();
 if (isset($_SESSION["usuario"])) {
     $usuario = $_SESSION["usuario"];
     $contador = $_SESSION["contador"][$usuario];
-    $contadores = $_SESSION["contador"];
+  
 } else {
     header("Location: index.php");
     exit();
@@ -20,7 +20,11 @@ if (isset($_SESSION["usuario"])) {
 ?>
 <?php include_once './includes/cabecera.php'; ?>
 <seccion class="main">
-    
+    <label for="">Usuario:</label>
+    <span><?= htmlspecialchars($usuario) ?></span>
+    <br>
+    <label for="">Contador: </label>
+    <span><?= $contador ?></span>
 </seccion>
 
 <?php include_once './includes/footer.php'; ?>
