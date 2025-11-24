@@ -19,9 +19,9 @@ if (isset($_SESSION["usuario"])) {
 }
 ?>
 <?php include_once './includes/cabecera.php'; ?>
+<hr>
 <seccion class="main">
     <h1>Dashboard</h1>
-    <p>Has accedido <?= $contador ?> veces.</p>
     <hr>
     <table>
         <thead>
@@ -42,7 +42,7 @@ if (isset($_SESSION["usuario"])) {
             <?php endforeach; ?>
         </tbody>
     </table>
-    <a href="nuevo_usuario.php">Nuevo Usuario</a>
+    <a href="nuevo_usuario.php"><i class="fa-solid fa-user-plus fa-2x"></i></a>
 </seccion>
 
 <?php include_once './includes/footer.php'; ?>
