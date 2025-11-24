@@ -35,7 +35,8 @@ if (isset($_SESSION["usuario"])) {
                     <td><?= htmlspecialchars($user) ?></td>
                     <td><?= $count ?></td>
                     <td>
-                        <a href="borrar_usuario.php?usuario=<?= urlencode($user) ?>">🗑️</a>
+                        <a href="editar_usuario.php"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="borrar_usuario.php?usuario=<?= urlencode($user) ?>"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
